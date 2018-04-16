@@ -1,0 +1,112 @@
+[
+{
+"question": "HTML is what kind of language?",
+"answers": {
+"A": "markup",
+"B": "markdown",
+"C": "programming",
+"D": "scripting",
+"E": "idiomatic"
+},
+"correctAnswer": "A"
+},
+{
+"question": "What does CSS stand for?",
+"answers": {
+"A": "Cute Syntax and Style",
+"B": "Curly Styles and Sheets",
+"C": "Cascading Style Sheets",
+"D": "Cryptagraphically Secured Styles",
+"E": "Cascading Syntax and Styles"
+},
+"correctAnswer": "C"
+},
+{
+"question": "JavaScript is...",
+"answers": {
+"A": "a version of Java designed for scripting.",
+"B": "is an advanced procedural language.",
+"C": "not yet available on any version of Internet Explorer.",
+"D": "what developed by Alan Turing.",
+"E": "is the only programming language supported by all modern web browsers."
+},
+"correctAnswer": "E"
+},
+{
+"question": "PHP is a ...",
+"answers": {
+"A": "Client side language.",
+"B": "Server side language.",
+"C": "Database language.",
+"D": "Pre-Heated Python lexigrammer",
+"E": "Proto-Hypertext Processing language"
+},
+"correctAnswer": "B"
+},
+{
+"question": "Python is a ...",
+"answers": {
+"A": "serpent based language.",
+"B": "non-idiomatic, non-syntax language.",
+"C": "is both a server-side and client-side language",
+"D": "language with many libraries.",
+"E": "shorter version of Anaconda."
+},
+"correctAnswer": "D"
+},
+{
+"question": "Bash is not used for ...",
+"answers": {
+"A": "building websites.",
+"B": "writing procedural code",
+"C": "server-side scripting.",
+"D": "handling simple tasks.",
+"E": "uncompiled server directives."
+},
+"correctAnswer": "A"
+},
+{
+"question": "MySQL is ...",
+"answers": {
+"A": "better than YourSQL.",
+"B": "an Open Source Relational Database Management System.",
+"C": "a proprietary JSON interpreter.",
+"D": "stands for My Serverless Query Language.",
+"E": "stands for My Super Quantum Language."
+},
+"correctAnswer": "B"
+},
+{
+"question": "PostgreSQL is ...",
+"answers": {
+"A": "more popular than MySQL.",
+"B": "not a Relational Database Management System.",
+"C": "a popular Relational Database Management System.",
+"D": "a web based programming language similar to Pascal",
+"E": "a JSON based query language."
+},
+"correctAnswer": "C"
+},
+{
+"question": "AJAX",
+"answers": {
+"A": "stands for Androgenous JavaScript and XML.",
+"B": "impacts the DOM.",
+"C": "is a JSON clenser.",
+"D": "is an open-source language.",
+"E": "is a primative form of browser/server communications"
+},
+"correctAnswer": "B"
+},
+{
+"question": "MEAN and LAMP",
+"answers": {
+"A": "are both web technology stacks.",
+"B": "are asynchronous to each other.",
+"C": "are the same.",
+"D": "are two languages that don't require human coders",
+"E": "are not web technologies."
+},
+"correctAnswer": "A"
+}
+]
