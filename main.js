@@ -11,6 +11,8 @@ var quiz = {
   Answers: [],
   answered: [],
   Score: 0,
+  count: 0,
+  NumberOfQuestions: 0
 };
 
 const iQUIZ = document.getElementById("idQUIZ"),
@@ -38,6 +40,10 @@ function pulljson(){
  xhr.onload = function(){
   if(this.status == 200){
    quiz.Json = JSON.parse(this.responseText);  
+   quiz.NumberOfQuestions=quiz.Json.length;
+   
+   
+
    for(var i=0;i<quiz.Json.length;i++){
     quiz.Questions.push(quiz.Json[i].question);
     quiz.ANSa.push(quiz.Json[i].answers.A);
@@ -81,20 +87,33 @@ var ANSWEREDS=[];
 function radi(FA){
 console.log('clicked ' + FA );
 console.log('Answer is ' + quiz.ANSkey[pg] );
+
+
 if (FA==quiz.ANSkey[pg]) {
- ANSWEREDS.push("Correct");
- console.log(ANSWEREDS);
+    ANSWEREDS.push("Correct");
+    console.log(ANSWEREDS);
+    quiz.Score++;
+    pg++;
+    pagenumber();
 } else {
- ANSWEREDS.push("Wrong");
- console.log(ANSWEREDS);
-}
-if (pg < (quiz.Questions.length - 1)) {
-  console.log('Page: ' + pg);
-} else { 
+    console.log('Checked');
+    ANSWEREDS.push("Wrong");
+    console.log(ANSWEREDS);
+    pg++;
+    pagenumber(); }
+
+quiz.count=(pg+1); 
+if (quiz.NumberOfQuestions < (quiz.count)) {
+  
   iQUIZ.style.display='none';
+  console.log("quiz.Score" + quiz.Score);
+  console.log("quiz.NumberOfQuestions" + quiz.NumberOfQuestions);
+  iQUESTION.style.display='none';
+  iPAGE.style.display='none';
+  var finalscore=((quiz.Score/quiz.NumberOfQuestions)*100);
+  console.log(finalscore);
+  iRESULT.innerHTML=finalscore;
 }
-pg++;
-pagenumber();
 }
 
 var pg=0;
