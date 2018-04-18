@@ -12,7 +12,8 @@ var quiz = {
   answered: [],
   Score: 0,
   count: 0,
-  NumberOfQuestions: 0
+  NumberOfQuestions: 0,
+  N: 0 // Number of answers for a given question
 };
 
 const iQUIZ = document.getElementById("idQUIZ"),
@@ -73,7 +74,7 @@ function pagenumber(){
  iCC.checked = false;
  iDD.checked = false;
  iEE.checked = false;
- iPAGE.innerHTML=pg;
+ iPAGE.innerHTML='Question ' + (pg+1);
  iQUESTION.innerHTML=quiz.Questions[pg];
  iA.innerHTML=quiz.ANSa[pg];
  iB.innerHTML=quiz.ANSb[pg];
@@ -83,37 +84,80 @@ function pagenumber(){
 }
 
 var ANSWEREDS=[];
+function box(FA){
 
-function radi(FA){
+var re = new RegExp(FA);
+iRESULT.innerHTML='';
 console.log('clicked ' + FA );
 console.log('Answer is ' + quiz.ANSkey[pg] );
-
-
-if (FA==quiz.ANSkey[pg]) {
-    ANSWEREDS.push("Correct");
-    console.log(ANSWEREDS);
-    quiz.Score++;
-    pg++;
-    pagenumber();
-} else {
-    console.log('Checked');
-    ANSWEREDS.push("Wrong");
-    console.log(ANSWEREDS);
-    pg++;
-    pagenumber(); }
-
-quiz.count=(pg+1); 
-if (quiz.NumberOfQuestions < (quiz.count)) {
-  
+console.log(ANSWEREDS);
+quiz.N=quiz.ANSkey[pg].length;
+var NN=quiz.N;
+  if (NN==1) {
+    console.log('NN = 1');
+    if (FA==quiz.ANSkey[pg]) {
+      ANSWEREDS.push("Correct");
+      console.log('Correct');
+      iRESULT.innerHTML='Correct';
+      quiz.Score++;              
+      pg++;
+      pagenumber();
+    } else {
+      ANSWEREDS.push("Wrong");
+      iRESULT.innerHTML='Wrong';
+      console.log(ANSWEREDS);
+      pg++;
+      pagenumber();
+    }
+  } else if (NN==2) {
+    console.log('NN = 2');
+    if (re.test(quiz.ANSkey[pg])){
+      quiz.ANSkey[pg] = quiz.ANSkey[pg].split(FA).join('');
+      iRESULT.innerHTML='Correct. Select one more answer';
+      console.log('Correct. Select one more answer');
+    } else {
+      ANSWEREDS.push("Wrong");
+      iRESULT.innerHTML='Wrong';
+      console.log(ANSWEREDS);
+      pg++;
+      pagenumber();
+    }
+  } else if (NN==3) {
+    console.log('NN = 3');
+    if (re.test(quiz.ANSkey[pg])){
+      quiz.ANSkey[pg] = quiz.ANSkey[pg].split(FA).join('');
+      iRESULT.innerHTML='Correct. Select two more answers';
+      console.log('Correct. Select two more answers');
+    } else {
+      ANSWEREDS.push("Wrong");
+      iRESULT.innerHTML='Wrong';
+      console.log(ANSWEREDS);
+      pg++;
+      pagenumber();
+    }
+  } else if (NN==4) {
+    console.log('NN = 4');
+    if (re.test(quiz.ANSkey[pg])){ 
+      quiz.ANSkey[pg] = quiz.ANSkey[pg].split(FA).join('');
+      iRESULT.innerHTML='Correct. Select three more answers';
+      console.log('Correct. Select three more answers');
+    } else {
+      ANSWEREDS.push("Wrong");
+      iRESULT.innerHTML='Wrong';
+      console.log(ANSWEREDS);
+      pg++;
+      pagenumber();
+  }
+}
+if (pg < (quiz.NumberOfQuestions)) { } else {  
   iQUIZ.style.display='none';
   console.log("quiz.Score" + quiz.Score);
   console.log("quiz.NumberOfQuestions" + quiz.NumberOfQuestions);
   iQUESTION.style.display='none';
   iPAGE.style.display='none';
-  var finalscore=((quiz.Score/quiz.NumberOfQuestions)*100);
+  var finalscore='You Scored ' + ((quiz.Score/quiz.NumberOfQuestions)*100) + ' Percent';
   console.log(finalscore);
   iRESULT.innerHTML=finalscore;
 }
 }
 
-var pg=0;

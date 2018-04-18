@@ -25,23 +25,23 @@
 "question": "JavaScript is...",
 "answers": {
 "A": "a version of Java designed for scripting.",
-"B": "is an advanced procedural language.",
+"B": "is both a server side and client side language.",
 "C": "not yet available on any version of Internet Explorer.",
 "D": "what developed by Alan Turing.",
 "E": "is the only programming language supported by all modern web browsers."
 },
-"correctAnswer": "E"
+"correctAnswer": "BE"
 },
 {
 "question": "PHP is a ...",
 "answers": {
 "A": "Client side language.",
 "B": "Server side language.",
-"C": "Database language.",
+"C": "Design for building powerful websites",
 "D": "Pre-Heated Python lexigrammer",
 "E": "Proto-Hypertext Processing language"
 },
-"correctAnswer": "B"
+"correctAnswer": "BC"
 },
 {
 "question": "Python is a ...",
@@ -94,9 +94,9 @@
 "B": "impacts the DOM.",
 "C": "is a JSON clenser.",
 "D": "is an open-source language.",
-"E": "is a primative form of browser/server communications"
+"E": "uses javascript to communicate with a specific server"
 },
-"correctAnswer": "B"
+"correctAnswer": "BE"
 },
 {
 "question": "MEAN and LAMP",
