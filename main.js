@@ -1,3 +1,7 @@
+/*!
+ * Copyright 2018 - Brigham Rex Russell
+ * MIT License
+ */
 var quiz = {
   Json: [],
   Questions: [],
